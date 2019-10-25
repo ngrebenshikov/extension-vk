@@ -1,16 +1,16 @@
 # extension-vk
 Haxe OpenFL extension for VK, supports VK SDK (*now only getting authentication token*) for Android and iOS. (inspired by extension-facebook)
 
-##How to Install
+## How to Install
 
-###Requirements
+### Requirements
 
 ```bash
 haxelib install inthebox-macros
 haxelib install extension-android-support-v4
 ```
 
-###iOS
+### iOS
 
 It needs to add the lines below to your Info.plist (It may be templated by you to override OpenFl's).
 
@@ -38,14 +38,14 @@ So these auth processors should be combined in one delegate. You can use our app
 
 Copy the folder "sample-include" in your project and change Build.xml and SDLUIKitDelegate.mm for your needs.
 
-###Android
+### Android
 
 It needs to add the lines below to your AndroidManifest.xml (It may be templated by you to override OpenFl's).
 
 ```xml
 <activity android:name="com.vk.sdk.VKServiceActivity" android:label="ServiceActivity" android:theme="@style/VK.Transparent" />
 ```
-###Project.xml
+### Project.xml
 
 Once this is done, you just need to add this to your project.xml
 ```xml
@@ -57,7 +57,7 @@ Once this is done, you just need to add this to your project.xml
 Detailed information about SDK [iOS](https://vk.com/dev/ios_sdk), [Android](https://vk.com/dev/android_sdk)
 
 
-##Usage example
+## Usage example
 
 Login the user to VK if needed:
 ```Haxe
@@ -76,6 +76,6 @@ vk.login(               // Show login dialog
 }
 ```
 
-##License
+## License
 
 The MIT License (MIT) - [LICENSE.md](LICENSE.md)
