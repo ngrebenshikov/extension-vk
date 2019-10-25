@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+	<haxelib name="inthebox-macros" />
+
+	<section if="android">
+		<haxelib name="extension-android-support-v4" if="openfl-next || openfl-legacy" />
+		<dependency name="vk-android-sdk" path="dependencies/android/vksdk_library" />
+		<android extension="org.haxe.extension.vk.VKExtension" />
+	</section>
+
+	<section if="ios">
+		<ndll name="extension_vk" />
+		<dependency path="dependencies/ios/libVKSdk.a" />
+	</section>
+
+</project>
