@@ -32,4 +32,12 @@
 	});
 }
 
+- (void)vkSdkShouldPresentViewController:(UIViewController *)controller {
+	UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+	[root presentViewController: controller animated: true completion: ^{}];
+}
+
+- (void)vkSdkNeedCaptchaEnter:(VKError *)captchaError {}
+
+
 @end

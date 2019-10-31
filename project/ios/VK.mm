@@ -13,6 +13,8 @@ namespace extension_vk {
 		callbacks = [[VKCallbacksDelegate alloc] init];
 		[VKSdk initializeWithAppId:[NSString stringWithUTF8String:appId.c_str()]];
 		[[VKSdk instance] registerDelegate: callbacks];
+		[[VKSdk instance] setUiDelegate: callbacks];
+		
 	}
 
 	void loginWithPermissions(std::vector<std::string> &permissions) {

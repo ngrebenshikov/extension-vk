@@ -3,7 +3,8 @@
 @class VKCallbacksDelegate;
 
 @interface VKCallbacksDelegate : NSObject <
-	VKSdkDelegate
+	VKSdkDelegate,
+	VKSdkUIDelegate
 >
 
 @end
