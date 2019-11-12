@@ -11,8 +11,7 @@ namespace extension_vk {
 	void init(std::string appId) {
 		root = [[[UIApplication sharedApplication] keyWindow] rootViewController];
 		callbacks = [[VKCallbacksDelegate alloc] init];
-		[VKSdk initializeWithAppId:[NSString stringWithUTF8String:appId.c_str()]];
-		[[VKSdk instance] registerDelegate: callbacks];
+		[[VKSdk initializeWithAppId:[NSString stringWithUTF8String:appId.c_str()]] registerDelegate: callbacks] ;
 		[[VKSdk instance] setUiDelegate: callbacks];
 		
 	}
@@ -23,5 +22,9 @@ namespace extension_vk {
 			[nsPermissions addObject:[NSString stringWithUTF8String:p.c_str()]];
 		}
 		[VKSdk authorize:nsPermissions];
+	}
+
+	void logout() {
+		[VKSdk forceLogout];
 	}
 }

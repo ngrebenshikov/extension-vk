@@ -79,6 +79,8 @@ class VK extends TaskExecutor {
 		onError : String->Void
 	) {
 
+		trace("VK.login");
+
 		var fOnComplete = function() {
 			addTask(new CallTask(onComplete));
 		}
@@ -101,6 +103,13 @@ class VK extends TaskExecutor {
 
 		#end
 		
+	}
+
+	public function logout() {
+		#if (android || ios)
+		VKCFFI.logout();
+		#end
+		setAuthToken("", null, null);
 	}
 
 }

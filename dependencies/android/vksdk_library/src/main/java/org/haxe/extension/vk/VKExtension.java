@@ -45,6 +45,10 @@ public class VKExtension extends Extension {
 		VKSdk.login(mainActivity, arr);
 	}
 
+	public static void logout() {
+		VKSdk.logout();
+	}
+
 
 	@Override public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

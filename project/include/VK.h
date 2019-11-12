@@ -9,6 +9,7 @@ namespace extension_vk {
 	void init(std::string appId);
 
 	void loginWithPermissions(std::vector<std::string> &permissions);
+	void logout();
 
 	void onTokenChange(const char *token, const char *userId, const char *email);
 	void onLoginSuccessCallback();

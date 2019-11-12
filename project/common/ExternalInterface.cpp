@@ -64,6 +64,10 @@ static value extension_vk_loginWithPermissions(value permissions) {
 }
 DEFINE_PRIM(extension_vk_loginWithPermissions, 1);
 
+static value extension_vk_logout() {
+	extension_vk::logout();
+}
+DEFINE_PRIM(extension_vk_logout, 0);
 
 static value extension_vk_setOnLoginSuccessCallback(value fun) {
 	_onVKLoginSuccessCallback = new AutoGCRoot(fun);

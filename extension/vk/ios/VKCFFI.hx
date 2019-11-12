@@ -8,6 +8,7 @@ class VKCFFI {
 
 	@CPP public static function init(appId: String, onTokenChange : String->String->String -> Void) {}
 	@CPP public static function loginWithPermissions(permissions : Array<String> = null) {}
+	@CPP public static function logout() {}
 
 	@CPP public static function setOnLoginSuccessCallback(f : Void->Void);
 	@CPP public static function setOnLoginFailedCallback(f : Void->Void);

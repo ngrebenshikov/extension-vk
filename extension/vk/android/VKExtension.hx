@@ -61,4 +61,13 @@ class VKExtension {
 		JNI.callStatic(fn, [str]);
 	}
 
+	public static function logout() {
+		var fn = JNI.createStaticMethod(
+			"org.haxe.extension.vk.VKExtension",
+			"logout",
+			"()V"
+		);
+		JNI.callStatic(fn, []);
+	}
+
 }
