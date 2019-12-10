@@ -106,10 +106,12 @@ class VK extends TaskExecutor {
 	}
 
 	public function logout() {
-		#if (android || ios)
-		VKCFFI.logout();
-		#end
-		setAuthToken("", null, null);
+		if (accessToken != null && accessToken != "") {
+			#if (android || ios)
+			VKCFFI.logout();
+			#end
+			setAuthToken("", null, null);
+		}
 	}
 
 }
