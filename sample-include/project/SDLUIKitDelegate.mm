@@ -3,6 +3,11 @@
 #import <VKSdk/VKSdk.h>
 #import <SDLUIKitDelegate.h>
 
+extern "C" {
+    #include <SDL_video.h>
+    #include <SDL_dropevents_c.h>
+}
+
 @implementation SDLUIKitDelegate(ProjectSDLUIKitDelegate)
 
 - (void)sendDropFileForURL:(NSURL *)url {
