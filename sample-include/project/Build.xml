@@ -4,10 +4,15 @@
 
     <set name="VK_SDK_DIR" value="../../../../../extension-vk/dependencies/ios/"/>
     <set name="FACEBOOK_SDK_DIR" value="../../../../../extension-facebook-aunty-betty/dependencies/ios/"/>
+    <set name="SDL_EVENTS_DIR" value="../../../../../lime/project/lib/sdl/src/events/"/>
+    <set name="SDL_INCLUDE_DIR" value="../../../../../lime/project/lib/sdl/include/"/>
 
     <files id="iphone">
         <compilerflag value="-I."/>
         <compilerflag value="-I${VK_SDK_DIR}include"/>
+        <compilerflag value="-I${SDL_INCLUDE_DIR}"/>
+        <compilerflag value="-I${SDL_INCLUDE_DIR}/configs/default/"/>
+        <compilerflag value="-I${SDL_EVENTS_DIR}"/>
         <compilerflag value="-F${FACEBOOK_SDK_DIR}"/>
         <compilerflag value="-framework"/>
         <compilerflag value="FBSDKCoreKit"/>

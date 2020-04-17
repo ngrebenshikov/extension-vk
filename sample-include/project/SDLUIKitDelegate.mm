@@ -5,6 +5,16 @@
 
 @implementation SDLUIKitDelegate(ProjectSDLUIKitDelegate)
 
+- (void)sendDropFileForURL:(NSURL *)url {
+    NSURL *fileURL = url.filePathURL;
+    if (fileURL != nil) {
+        SDL_SendDropFile(NULL, fileURL.path.UTF8String);
+    } else {
+        SDL_SendDropFile(NULL, url.absoluteString.UTF8String);
+    }
+    SDL_SendDropComplete(NULL);
+}
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 	NSLog(@"openURL");
 	[[FBSDKApplicationDelegate sharedInstance] application:application
@@ -12,6 +22,7 @@
         sourceApplication:sourceApplication
         annotation:annotation];
     [VKSdk processOpenURL:url fromApplication:sourceApplication];
+    [self sendDropFileForURL:url];
     return YES;
 }
 
